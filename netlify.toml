@@ -2,8 +2,3 @@
   command = "npm run build"
   publish = ".next"
 
-[[plugins]]
-  [plugins.inputs.postBuild]
-    enable = true
-  [plugins.inputs]
-    enable = false 
