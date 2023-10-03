@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
+            ["classnames", "npm:2.3.2"],\
             ["next", "virtual:b26d07e80620159fe6196e6e19ce9deeb1638959fcc41a8852a56a2aa43e7c0a9c1204bdee37fee12816f89adbb9907594ced202207040f097c27c2de4dd13b1#npm:13.5.4"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b26d07e80620159fe6196e6e19ce9deeb1638959fcc41a8852a56a2aa43e7c0a9c1204bdee37fee12816f89adbb9907594ced202207040f097c27c2de4dd13b1#npm:18.2.0"],\
@@ -207,6 +208,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["classnames", [\
+        ["npm:2.3.2", {\
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.2-d2fdae468d-2c62199789.zip/node_modules/classnames/",\
+          "packageDependencies": [\
+            ["classnames", "npm:2.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["client-only", [\
         ["npm:0.0.1", {\
           "packageLocation": "./.yarn/cache/client-only-npm-0.0.1-07d3e9505c-0c16bf660d.zip/node_modules/client-only/",\
@@ -329,6 +339,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
+            ["classnames", "npm:2.3.2"],\
             ["next", "virtual:b26d07e80620159fe6196e6e19ce9deeb1638959fcc41a8852a56a2aa43e7c0a9c1204bdee37fee12816f89adbb9907594ced202207040f097c27c2de4dd13b1#npm:13.5.4"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:b26d07e80620159fe6196e6e19ce9deeb1638959fcc41a8852a56a2aa43e7c0a9c1204bdee37fee12816f89adbb9907594ced202207040f097c27c2de4dd13b1#npm:18.2.0"],\

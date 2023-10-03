@@ -1,0 +1,55 @@
+.body {
+  margin: 0;
+}
+
+.header {
+  background-color: #fca4e3;
+  margin: 0 auto;
+  padding: 1.45rem 1.0875rem;
+}
+
+.main {
+  margin: 1.45rem 1.0875rem;
+}
+
+.mainContent {
+  margin: 1rem 0;
+}
+
+.signatureRow {
+  display: flex;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+}
+
+.signatureText {
+  align-self: center;
+  margin-left: 30px;
+  font-size: small;
+  line-height: 1.2rem;
+  margin: 0;
+  margin-left: 1rem;
+}
+
+.links {
+  font-size: small;
+  margin-top: 1.2rem;
+}
+
+.links a {
+  color: #950451;
+  text-decoration: none;
+  text-shadow: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0) 1px,
+    #950451 1px,
+    #950451 2px,
+    rgba(0, 0, 0, 0) 2px
+  );
+}
