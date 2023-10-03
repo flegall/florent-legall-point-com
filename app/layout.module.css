@@ -6,6 +6,7 @@
   background-color: #fca4e3;
   margin: 0 auto;
   padding: 1.45rem 1.0875rem;
+  font-size: 3em;
 }
 
 .main {
@@ -14,29 +15,30 @@
 
 .mainContent {
   margin: 1rem 0;
+  font-size: 1.4em;
 }
 
 .signatureRow {
   display: flex;
 }
 
-.avatar {
+.signatureRow .avatar {
   border-radius: 50%;
   height: 4rem;
   width: 4rem;
 }
 
-.signatureText {
+.signatureRow .signatureText {
   align-self: center;
   margin-left: 30px;
-  font-size: small;
+  font-size: 1em;
   line-height: 1.2rem;
   margin: 0;
   margin-left: 1rem;
 }
 
 .links {
-  font-size: small;
+  font-size: 1em;
   margin-top: 1.2rem;
 }
 

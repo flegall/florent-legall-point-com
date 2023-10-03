@@ -13,7 +13,7 @@ const robotoTitle = Roboto({
 });
 
 const roboto = Roboto({
-  weight: "400",
+  weight: "300",
   subsets: ["latin"],
 });
 
