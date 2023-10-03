@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   title: "Software's kitchen",
   description:
     "Notes on software development in english and sometimes in french.",
+  icons:
+    "//www.gravatar.com/avatar/fd5e5220fa103cc75e2f4f9fbe16ebb7?d=retro&amp;r=g&amp;s=100",
 };
 
 export default function RootLayout({
