@@ -1,10 +1,12 @@
 import { AppProps } from "next/app";
-import RootLayout from "../components/layout";
+import Layout from "../components/layout";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <RootLayout>
+    <Layout>
       <Component {...pageProps} />
-    </RootLayout>
+    </Layout>
   );
-}
+};
+
+export default App;

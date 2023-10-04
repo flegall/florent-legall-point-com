@@ -16,11 +16,7 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={inter.className}>
       <header className={cx(robotoTitle.className, styles.header)}>
@@ -56,4 +52,6 @@ export default function RootLayout({
       </main>
     </div>
   );
-}
+};
+
+export default Layout;
