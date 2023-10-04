@@ -2,6 +2,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import matter, { GrayMatterFile } from "gray-matter";
 import path from "path";
+import readingTime from "reading-time";
 import { remark } from "remark";
 import html from "remark-html";
 import * as t from "typanion";
@@ -38,13 +39,14 @@ const parseMarkdown = (id: string) => {
 const parsePostMetaData = (id: string, markDown: GrayMatterFile<string>) => {
   const data = markDown.data;
   const errors: string[] = [];
+  const { text: readingTimeEstimation } = readingTime(markDown.content);
   if (!isPost(data, { errors })) {
     throw new Error(
       "Invalid blog post: '" + id + "' : " + JSON.stringify(errors, null, 2)
     );
   }
 
-  return data;
+  return { ...data, readingTimeEstimation };
 };
 
 export const getAllPostIds = () => {
@@ -74,7 +76,7 @@ export const getPostData = async (id: string) => {
   };
 };
 
-export const getSortedPostsData = (): { id: string; data: Post }[] => {
+export const getSortedPostsData = () => {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -88,12 +90,18 @@ export const getSortedPostsData = (): { id: string; data: Post }[] => {
       data,
     };
   });
-  // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.data.date < b.data.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+
+  return (
+    allPostsData
+      // Sort posts by date
+      .sort((a, b) => {
+        if (a.data.date < b.data.date) {
+          return 1;
+        } else {
+          return -1;
+        }
+      })
+      // Show only published posts
+      .filter((post) => post.data.published === true)
+  );
 };

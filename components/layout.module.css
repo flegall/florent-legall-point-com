@@ -17,10 +17,14 @@
   margin: 1.45rem 1.0875rem;
 }
 
-.mainContent {
-  margin: 1rem 0;
-  font-size: 1.4em;
+.mainDiv {
+  margin: 0 auto;
   max-width: 960px;
+}
+
+.mainContent {
+  margin: 1rem 0 3rem;
+  font-size: 1.4em;
 }
 
 .signatureRow {

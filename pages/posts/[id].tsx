@@ -1,5 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/posts";
 
+import styles from "./[id].module.css";
+
 export const getStaticPaths = async () => {
   const paths = getAllPostIds();
   return {
@@ -9,7 +11,7 @@ export const getStaticPaths = async () => {
 };
 
 type PostProps = {
-  postData: Awaited<ReturnType<typeof getPostData>>;
+  post: Awaited<ReturnType<typeof getPostData>>;
 };
 
 export const getStaticProps = async ({
@@ -20,16 +22,20 @@ export const getStaticProps = async ({
   const postData = await getPostData(params.id);
   return {
     props: {
-      postData,
+      post: postData,
     },
   };
 };
 
-const Post = ({ postData }: PostProps) => {
+const Post = ({ post }: PostProps) => {
   return (
     <>
-      <h2>{postData.data.title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <h2>{post.data.title}</h2>
+      <span className={styles.description}>
+        "{post.data.description}" ({post.data.readingTimeEstimation})
+      </span>{" "}
+      <span className={styles.description}>{post.data.date}</span>
+      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </>
   );
 };
