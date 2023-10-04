@@ -1,8 +1,10 @@
 import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import * as t from "typanion";
 import yaml from "js-yaml";
+import matter, { GrayMatterFile } from "gray-matter";
+import path from "path";
+import { remark } from "remark";
+import html from "remark-html";
+import * as t from "typanion";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -17,14 +19,11 @@ const isPost = t.isObject({
 
 type Post = t.InferType<typeof isPost>;
 
-const readFileContents = (id: string) => {
+const parseMarkdown = (id: string) => {
   // Read markdown from string
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
-  return fileContents;
-};
 
-const parsePostMetaData = (id: string, fileContents: string) => {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents, {
     engines: {
@@ -33,7 +32,11 @@ const parsePostMetaData = (id: string, fileContents: string) => {
     },
   });
 
-  const data = matterResult.data;
+  return matterResult;
+};
+
+const parsePostMetaData = (id: string, markDown: GrayMatterFile<string>) => {
+  const data = markDown.data;
   const errors: string[] = [];
   if (!isPost(data, { errors })) {
     throw new Error(
@@ -56,13 +59,18 @@ export const getAllPostIds = () => {
   });
 };
 
-export const getPostData = (id: string) => {
-  const fileContents = readFileContents(id);
-  const data = parsePostMetaData(id, fileContents);
+export const getPostData = async (id: string) => {
+  const markDown = parseMarkdown(id);
+  const data = parsePostMetaData(id, markDown);
+
+  // Use remark to convert markdown into HTML string
+  const processedContent = await remark().use(html).process(markDown.content);
+  const contentHtml = processedContent.toString();
 
   return {
     id,
     data,
+    contentHtml,
   };
 };
 
@@ -73,8 +81,8 @@ export const getSortedPostsData = (): { id: string; data: Post }[] => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
-    const fileContents = readFileContents(id);
-    const data = parsePostMetaData(id, fileContents);
+    const markDown = parseMarkdown(id);
+    const data = parsePostMetaData(id, markDown);
     return {
       id,
       data,

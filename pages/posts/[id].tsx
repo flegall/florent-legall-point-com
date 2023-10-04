@@ -9,7 +9,7 @@ export const getStaticPaths = async () => {
 };
 
 type PostProps = {
-  postData: ReturnType<typeof getPostData>;
+  postData: Awaited<ReturnType<typeof getPostData>>;
 };
 
 export const getStaticProps = async ({
@@ -17,7 +17,7 @@ export const getStaticProps = async ({
 }: {
   params: { id: string };
 }): Promise<{ props: PostProps }> => {
-  const postData = getPostData(params.id);
+  const postData = await getPostData(params.id);
   return {
     props: {
       postData,
@@ -26,7 +26,12 @@ export const getStaticProps = async ({
 };
 
 const Post = ({ postData }: PostProps) => {
-  return postData.data.title;
+  return (
+    <>
+      <h2>{postData.data.title}</h2>
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+    </>
+  );
 };
 
 export default Post;
