@@ -17,6 +17,33 @@ const isPost = t.isObject({
 
 type Post = t.InferType<typeof isPost>;
 
+const readFileContents = (id: string) => {
+  // Read markdown from string
+  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  return fileContents;
+};
+
+const parsePostMetaData = (id: string, fileContents: string) => {
+  // Use gray-matter to parse the post metadata section
+  const matterResult = matter(fileContents, {
+    engines: {
+      // @ts-ignore
+      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
+    },
+  });
+
+  const data = matterResult.data;
+  const errors: string[] = [];
+  if (!isPost(data, { errors })) {
+    throw new Error(
+      "Invalid blog post: '" + id + "' : " + JSON.stringify(errors, null, 2)
+    );
+  }
+
+  return data;
+};
+
 export const getAllPostIds = () => {
   const fileNames = fs.readdirSync(postsDirectory);
 
@@ -30,25 +57,9 @@ export const getAllPostIds = () => {
 };
 
 export const getPostData = (id: string) => {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const fileContents = readFileContents(id);
+  const data = parsePostMetaData(id, fileContents);
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents, {
-    engines: {
-      // @ts-ignore
-      yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
-    },
-  });
-  const data = matterResult.data;
-  const errors: string[] = [];
-  if (!isPost(data, { errors })) {
-    throw new Error(
-      "Invalid blog post: '" + id + "' : " + JSON.stringify(errors, null, 2)
-    );
-  }
-
-  // Combine the data with the id
   return {
     id,
     data,
@@ -62,27 +73,8 @@ export const getSortedPostsData = (): { id: string; data: Post }[] => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents, {
-      engines: {
-        // @ts-ignore
-        yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
-      },
-    });
-
-    const data = matterResult.data;
-    const errors: string[] = [];
-    if (!isPost(data, { errors })) {
-      throw new Error(
-        "Invalid blog post: '" + id + "' : " + JSON.stringify(errors, null, 2)
-      );
-    }
-
-    // Combine the data with the id
+    const fileContents = readFileContents(id);
+    const data = parsePostMetaData(id, fileContents);
     return {
       id,
       data,
