@@ -4,7 +4,6 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head>
-        <title>Software's kitchen</title>
         <link
           rel="icon"
           type="image/png"
