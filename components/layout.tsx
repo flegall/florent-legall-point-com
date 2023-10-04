@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Roboto } from "next/font/google";
 
 import styles from "./layout.module.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={inter.className}>
       <header className={cx(robotoTitle.className, styles.header)}>
-        Software kitchen
+        <Link href="/" className={styles.mainLink}>
+          Software kitchen
+        </Link>
       </header>
       <main className={cx(roboto.className, styles.main)}>
         <div className={styles.mainContent}>{children}</div>
