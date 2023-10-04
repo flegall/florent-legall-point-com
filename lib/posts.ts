@@ -29,7 +29,7 @@ export const getAllPostIds = () => {
   });
 };
 
-export function getPostData(id) {
+export const getPostData = (id) => {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -52,7 +52,7 @@ export function getPostData(id) {
     id,
     ...matterResult.data,
   };
-}
+};
 
 export const getSortedPostsData = (): { id: string; data: Post }[] => {
   // Get file names under /posts
