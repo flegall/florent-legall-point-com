@@ -1,3 +1,9 @@
 .description {
   font-size: 1rem;
 }
+
+.notPublishedWarning {
+  background-color: lemonchiffon;
+  padding: 1rem;
+  margin: 1rem 0;
+}

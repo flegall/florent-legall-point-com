@@ -35,6 +35,11 @@ const Post = ({ post }: PostProps) => {
         "{post.data.description}" ({post.data.readingTimeEstimation})
       </span>{" "}
       <span className={styles.description}>{post.data.date}</span>
+      {post.data.published === false && (
+        <div className={styles.notPublishedWarning}>
+          ⚠️ This article is still a draft.
+        </div>
+      )}
       <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
     </>
   );
