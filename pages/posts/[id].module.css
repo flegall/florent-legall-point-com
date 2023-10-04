@@ -7,3 +7,15 @@
   padding: 1rem;
   margin: 1rem 0;
 }
+
+.markdown img {
+  display: block;
+  max-width: 960px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.markdown img[alt="a picture of me"] {
+  max-width: 480px;
+}

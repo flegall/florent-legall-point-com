@@ -40,7 +40,10 @@ const Post = ({ post }: PostProps) => {
           ⚠️ This article is still a draft.
         </div>
       )}
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      <div
+        className={styles.markdown}
+        dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+      />
     </>
   );
 };

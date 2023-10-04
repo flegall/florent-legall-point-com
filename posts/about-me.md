@@ -12,6 +12,8 @@ tags:
 
 I'm a **software engineer**, I've been working since 2004.
 
+![a picture of me](/me.png)
+
 I've worked at various companies from 5 person **startups** to > 100.000 person **mega companies**.
 
 I'm a **passionate** developer, I've written software of many kind in various domains : public transportation, air traffic control, project management software, IT automation, release management, insurance, television.
