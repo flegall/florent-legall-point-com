@@ -84,6 +84,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-yaml@npm:^4.0.6":
+  version: 4.0.6
+  resolution: "@types/js-yaml@npm:4.0.6"
+  checksum: d4439ec2cc830d355c2a1d7508f49888931b2cfe59d786d27621edd530bf06314b1dceeaa759e21f9b035a0ff623a0ca306752ebb73df9485c02abe045bd962c
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:^20.8.2":
   version: 20.8.2
   resolution: "@types/node@npm:20.8.2"
@@ -291,6 +298,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "next-netlify-starter@workspace:."
   dependencies:
+    "@types/js-yaml": ^4.0.6
     "@types/node": ^20.8.2
     "@types/react": ^18.2.24
     "@types/react-dom": ^18.2.8

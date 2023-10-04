@@ -29,13 +29,14 @@ export const getAllPostIds = () => {
   });
 };
 
-export const getPostData = (id) => {
+export const getPostData = (id: string) => {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents, {
     engines: {
+      // @ts-ignore
       yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
     },
   });
@@ -50,7 +51,7 @@ export const getPostData = (id) => {
   // Combine the data with the id
   return {
     id,
-    ...matterResult.data,
+    data,
   };
 };
 
@@ -68,6 +69,7 @@ export const getSortedPostsData = (): { id: string; data: Post }[] => {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents, {
       engines: {
+        // @ts-ignore
         yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
       },
     });

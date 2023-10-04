@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@types/js-yaml", "npm:4.0.6"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
@@ -139,6 +140,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@swc/helpers", "npm:0.5.2"],\
             ["tslib", "npm:2.6.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/js-yaml", [\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/@types-js-yaml-npm-4.0.6-2552380aa3-d4439ec2cc.zip/node_modules/@types/js-yaml/",\
+          "packageDependencies": [\
+            ["@types/js-yaml", "npm:4.0.6"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -425,6 +435,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["next-netlify-starter", "workspace:."],\
+            ["@types/js-yaml", "npm:4.0.6"],\
             ["@types/node", "npm:20.8.2"],\
             ["@types/react", "npm:18.2.24"],\
             ["@types/react-dom", "npm:18.2.8"],\
