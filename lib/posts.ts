@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import * as t from "typanion";
+import yaml from "js-yaml";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -28,11 +29,18 @@ export const getSortedPostsData = (): { id: string; data: Post }[] => {
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+    const matterResult = matter(fileContents, {
+      engines: {
+        yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }),
+      },
+    });
 
     const data = matterResult.data;
-    if (!isPost(data)) {
-      throw new Error("Invalid");
+    const errors: string[] = [];
+    if (!isPost(data, { errors })) {
+      throw new Error(
+        "Invalid blog post: '" + id + "' : " + JSON.stringify(errors, null, 2)
+      );
     }
 
     // Combine the data with the id
