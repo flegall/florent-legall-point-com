@@ -8,6 +8,10 @@
   margin: 1rem 0;
 }
 
+.markdown {
+  text-align: justify;
+}
+
 .markdown img {
   display: block;
   max-width: 960px;
