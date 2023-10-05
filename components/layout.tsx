@@ -1,14 +1,17 @@
 import cx from "classnames";
 import Link from "next/link";
-import { Roboto } from "next/font/google";
+
+import { Aleo } from "next/font/google";
 
 import styles from "./layout.module.css";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+const font = Aleo({
+  subsets: ["latin"],
+});
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={roboto.className}>
+    <div className={font.className}>
       <header className={cx(styles.header)}>
         <Link href="/" className={styles.mainLink}>
           Software kitchen
