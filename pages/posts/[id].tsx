@@ -30,7 +30,7 @@ export const getStaticProps = async ({
 const Post = ({ post }: PostProps) => {
   return (
     <>
-      <h2>{post.data.title}</h2>
+      <h1>{post.data.title}</h1>
       <span className={styles.description}>
         "{post.data.description}" ({post.data.readingTimeEstimation})
       </span>{" "}
