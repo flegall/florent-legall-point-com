@@ -1,31 +1,17 @@
 import cx from "classnames";
-import { Inter } from "next/font/google";
-import { Roboto } from "next/font/google";
 
 import styles from "./layout.module.css";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const robotoTitle = Roboto({
-  weight: "700",
-  subsets: ["latin"],
-});
-
-const roboto = Roboto({
-  weight: "300",
-  subsets: ["latin"],
-});
-
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={inter.className}>
-      <header className={cx(robotoTitle.className, styles.header)}>
+    <div>
+      <header className={cx(styles.header)}>
         <Link href="/" className={styles.mainLink}>
           Software kitchen
         </Link>
       </header>
-      <main className={cx(roboto.className, styles.main)}>
+      <main className={cx(styles.main)}>
         <div className={styles.mainDiv}>
           <div className={styles.mainContent}>{children}</div>
           <div className={styles.signatureRow}>
@@ -39,9 +25,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               className={styles.avatar}
             />
             <p className={styles.signatureText}>
-              <b className={robotoTitle.className}>
-                Florent Le Gall&apos;s personal blog
-              </b>
+              <b>Florent Le Gall&apos;s personal blog</b>
               <br />
               Notes on software development in english and sometimes in french.
             </p>

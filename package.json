@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "yarn build && (cd out && python3 -m http.server)",
     "export": "next export"
   },
   "dependencies": {
