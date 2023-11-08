@@ -28,10 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@types/js-yaml", "npm:4.0.8"],\
-            ["@types/node", "npm:20.8.9"],\
-            ["@types/react", "npm:18.2.33"],\
-            ["@types/react-dom", "npm:18.2.14"],\
+            ["@types/js-yaml", "npm:4.0.9"],\
+            ["@types/node", "npm:20.9.0"],\
+            ["@types/react", "npm:18.2.37"],\
+            ["@types/react-dom", "npm:18.2.15"],\
             ["classnames", "npm:2.3.2"],\
             ["gray-matter", "npm:4.0.3"],\
             ["js-yaml", "npm:4.1.0"],\
@@ -168,10 +168,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/js-yaml", [\
-        ["npm:4.0.8", {\
-          "packageLocation": "./.yarn/cache/@types-js-yaml-npm-4.0.8-9956f51f10-a5a77a5a1e.zip/node_modules/@types/js-yaml/",\
+        ["npm:4.0.9", {\
+          "packageLocation": "./.yarn/cache/@types-js-yaml-npm-4.0.9-6a16d01bd2-e5e5e49b57.zip/node_modules/@types/js-yaml/",\
           "packageDependencies": [\
-            ["@types/js-yaml", "npm:4.0.8"]\
+            ["@types/js-yaml", "npm:4.0.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -196,10 +196,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:20.8.9", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-20.8.9-9c9903a005-0c05f3502a.zip/node_modules/@types/node/",\
+        ["npm:20.9.0", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.9.0-d5b5fa6634-bfd927da6b.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:20.8.9"],\
+            ["@types/node", "npm:20.9.0"],\
             ["undici-types", "npm:5.26.5"]\
           ],\
           "linkType": "HARD"\
@@ -225,10 +225,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:18.2.33", {\
-          "packageLocation": "./.yarn/cache/@types-react-npm-18.2.33-aad7d56562-75903c4d53.zip/node_modules/@types/react/",\
+        ["npm:18.2.37", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.2.37-3fa76216da-2d2599f1a0.zip/node_modules/@types/react/",\
           "packageDependencies": [\
-            ["@types/react", "npm:18.2.33"],\
+            ["@types/react", "npm:18.2.37"],\
             ["@types/prop-types", "npm:15.7.8"],\
             ["@types/scheduler", "npm:0.16.4"],\
             ["csstype", "npm:3.1.2"]\
@@ -237,10 +237,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/react-dom", [\
-        ["npm:18.2.14", {\
-          "packageLocation": "./.yarn/cache/@types-react-dom-npm-18.2.14-cdfaaeda19-890289c70d.zip/node_modules/@types/react-dom/",\
+        ["npm:18.2.15", {\
+          "packageLocation": "./.yarn/cache/@types-react-dom-npm-18.2.15-2269cd02ff-8e9631600c.zip/node_modules/@types/react-dom/",\
           "packageDependencies": [\
-            ["@types/react-dom", "npm:18.2.14"],\
+            ["@types/react-dom", "npm:18.2.15"],\
             ["@types/react", "npm:18.2.24"]\
           ],\
           "linkType": "HARD"\
@@ -1095,8 +1095,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@opentelemetry/api", null],\
             ["@swc/helpers", "npm:0.5.2"],\
             ["@types/opentelemetry__api", null],\
-            ["@types/react", "npm:18.2.33"],\
-            ["@types/react-dom", "npm:18.2.14"],\
+            ["@types/react", "npm:18.2.37"],\
+            ["@types/react-dom", "npm:18.2.15"],\
             ["@types/sass", null],\
             ["busboy", "npm:1.6.0"],\
             ["caniuse-lite", "npm:1.0.30001542"],\
@@ -1125,10 +1125,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["next-netlify-starter", "workspace:."],\
-            ["@types/js-yaml", "npm:4.0.8"],\
-            ["@types/node", "npm:20.8.9"],\
-            ["@types/react", "npm:18.2.33"],\
-            ["@types/react-dom", "npm:18.2.14"],\
+            ["@types/js-yaml", "npm:4.0.9"],\
+            ["@types/node", "npm:20.9.0"],\
+            ["@types/react", "npm:18.2.37"],\
+            ["@types/react-dom", "npm:18.2.15"],\
             ["classnames", "npm:2.3.2"],\
             ["gray-matter", "npm:4.0.3"],\
             ["js-yaml", "npm:4.1.0"],\
@@ -1206,7 +1206,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/react-dom-virtual-66992f65f2/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
           "packageDependencies": [\
             ["react-dom", "virtual:b26d07e80620159fe6196e6e19ce9deeb1638959fcc41a8852a56a2aa43e7c0a9c1204bdee37fee12816f89adbb9907594ced202207040f097c27c2de4dd13b1#npm:18.2.0"],\
-            ["@types/react", "npm:18.2.33"],\
+            ["@types/react", "npm:18.2.37"],\
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
             ["scheduler", "npm:0.23.0"]\
@@ -1371,7 +1371,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", null],\
             ["@types/babel-plugin-macros", null],\
             ["@types/babel__core", null],\
-            ["@types/react", "npm:18.2.33"],\
+            ["@types/react", "npm:18.2.37"],\
             ["babel-plugin-macros", null],\
             ["client-only", "npm:0.0.1"],\
             ["react", "npm:18.2.0"]\
