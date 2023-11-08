@@ -20,7 +20,7 @@
     "remark-html": "^16.0.1",
     "typanion": "^3.14.0"
   },
-  "packageManager": "yarn@3.6.3",
+  "packageManager": "yarn@4.0.1",
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.9.0",
